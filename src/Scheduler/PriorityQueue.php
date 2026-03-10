@@ -72,6 +72,7 @@ class InternalPriorityQueue extends SplPriorityQueue
     // use this value to "stabilize" the priority queue
     private $serial = PHP_INT_MAX;
 
+    #[ReturnTypeWillChange]
     public function insert($item, $priority)
     {
         parent::insert($item, [$priority, $this->serial--]);
